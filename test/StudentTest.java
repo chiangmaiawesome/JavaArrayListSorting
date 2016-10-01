@@ -5,7 +5,7 @@
  */
 
 import java.util.*;
-import org.junit.Test;
+import org.junit.*;
 
 /**
  *
@@ -16,7 +16,7 @@ public class StudentTest {
     public StudentTest() {
     }
 
-    @Test
+    @Ignore
     public void testCollectionsSort() {
         List<Student> arraylist = new ArrayList<>();
         arraylist.add(new Student(223, "Chaitanya", 26));
@@ -25,6 +25,29 @@ public class StudentTest {
 
         Collections.sort(arraylist);
 
+        arraylist.stream().forEach((str) -> {
+            System.out.println(str.toJson());
+        });
+    }
+
+    @Test
+    public void testMultipleProperties() {
+        List<StudentMP> arraylist = new ArrayList<>();
+        arraylist.add(new StudentMP(101, "Zues", 26));
+        arraylist.add(new StudentMP(505, "Abey", 24));
+        arraylist.add(new StudentMP(809, "Vignesh", 32));
+
+        /*Sorting based on Student Name*/
+        System.out.println("Student Name Sorting:");
+        Collections.sort(arraylist, StudentMP.StuNameComparator);
+
+        arraylist.stream().forEach((str) -> {
+            System.out.println(str.toJson());
+        });
+
+        /* Sorting on Rollno property*/
+        System.out.println("RollNum Sorting:");
+        Collections.sort(arraylist, StudentMP.StuRollno);
         arraylist.stream().forEach((str) -> {
             System.out.println(str.toJson());
         });
