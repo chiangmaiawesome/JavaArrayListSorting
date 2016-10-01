@@ -46,19 +46,15 @@ public class StudentMP {
     };
 
     /*Comparator for sorting the list by roll no*/
-    public static Comparator<StudentMP> StuRollno = new Comparator<StudentMP>() {
-        @Override
-        public int compare(StudentMP s1, StudentMP s2) {
-
-            int rollno1 = s1.getRollno();
-            int rollno2 = s2.getRollno();
-
-            /*For ascending order*/
-            return rollno1 - rollno2;
-
-            /*For descending order*/
-            //rollno2-rollno1;
-        }
+    public static Comparator<StudentMP> StuRollno = (StudentMP s1, StudentMP s2) -> {
+        int rollno1 = s1.getRollno();
+        int rollno2 = s2.getRollno();
+        
+        /*For ascending order*/
+        return rollno1 - rollno2;
+        
+        /*For descending order*/
+        //rollno2-rollno1;
     };
 
     @Override
