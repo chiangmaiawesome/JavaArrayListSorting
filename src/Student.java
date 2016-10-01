@@ -51,10 +51,10 @@ public class Student implements Comparable {
         return gson.toJson(this);
     }
 
-//    @Override
-//    public String toString() {
-//        return "[ rollno=" + rollno + ", name=" + studentname + ", age=" + studentage + "]";
-//    }
+    @Override
+    public String toString() {
+        return "[ rollno=" + rollno + ", name=" + studentname + ", age=" + studentage + "]";
+    }
 
     @Override
     public int compareTo(Object o) {
