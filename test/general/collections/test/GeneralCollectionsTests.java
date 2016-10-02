@@ -5,6 +5,7 @@
  */
 package general.collections.test;
 
+import com.google.gson.Gson;
 import java.util.*;
 import org.junit.*;
 
@@ -40,6 +41,9 @@ public class GeneralCollectionsTests {
         al.stream().forEach((temp) -> {
             System.out.println(temp);
         });
+        
+        Gson gson = new Gson();
+        System.out.println(gson.toJson(al));        
     }
 
     @Test
